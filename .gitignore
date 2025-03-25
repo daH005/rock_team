@@ -1,5 +1,8 @@
 venv
 __pycache__
 .ipynb*
-*.csv
+lr1/*.csv
+lr2/*.csv
+lr4/*.csv
+lr7/*.csv
 .env
