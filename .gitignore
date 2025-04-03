@@ -6,3 +6,4 @@ lr2/*.csv
 lr4/*.csv
 lr7/*.csv
 .env
+.idea

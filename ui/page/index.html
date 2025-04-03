@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Witcher Elvish Translator</title>
+    <link rel="stylesheet" href="./static/main.css">
+</head>
+<body>
+<main>
+
+<div class="translator-wrapper">
+    <div class="translator">
+        <div class="translator__sides">
+
+            <div class="translator__side">
+                <div class="translator__options-wrapper">
+                    <div class="translator__selected-option">Russian</div>
+                    <div class="translator__options">
+                        <div class="translator__option">Elvish</div>
+                        <div class="translator__option">Russian</div>
+                        <div class="translator__option">English</div>
+                    </div>
+                </div>
+                <textarea class="translator__input"></textarea>
+            </div>
+
+            <div class="translator__side">
+                <div class="translator__options-wrapper">
+                    <div class="translator__selected-option">Elvish</div>
+                    <div class="translator__options">
+                        <div class="translator__option">Elvish</div>
+                        <div class="translator__option">Russian</div>
+                        <div class="translator__option">English</div>
+                    </div>
+                </div>
+                <textarea class="translator__input" readonly></textarea>
+            </div>
+
+        </div>
+        <button class="translator__start">Go</button>
+    </div>
+</div>
+
+</main>
+
+<script>
+    const API_BASE_URL = "http://localhost:8080/translate/";
+    const inputs = document.querySelectorAll(".translator__input");
+
+    const selectedOptions = document.querySelectorAll(".translator__selected-option");
+    document.querySelectorAll(".translator__options-wrapper").forEach((parent, index) => {
+        parent.querySelectorAll(".translator__option").forEach((option) => {
+            option.onclick = () => {
+                selectedOptions[index].textContent = option.textContent;
+            }
+        });
+    });
+
+    document.querySelector(".translator__start").onclick = async () => {
+        let url = API_BASE_URL + selectedOptions[0].textContent.toLowerCase() + "_to_" + selectedOptions[1].textContent.toLowerCase();
+        url += "?text=" + inputs[0].textContent;
+        let response = await fetch(url);
+        let text = await response.text();
+        inputs[1].textContent = text;
+    }
+</script>
+
+</body>
+</html>

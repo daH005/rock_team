@@ -1,0 +1,65 @@
+:root {
+    --main-color: #ed153e;
+    --main-2-color: #be3437;
+    --main-3-color: #E40134;
+}
+
+@font-face {
+    font-family: main;
+    src: url('./tahoma.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+body, input, button, textarea {
+    font-family: main;
+}
+
+.translator-wrapper {
+    width: 100vw;
+    height: 100vh;
+}
+
+translator {
+    margin: auto;
+}
+
+.translator__sides {
+    display: flex;
+}
+
+.translator__side {
+
+}
+
+.translator__options-wrapper {
+    position: relative;
+}
+
+.translator__selected-option {
+
+}
+
+.translator__selected-option:hover ~ .translator__options, .translator__options:hover {
+    display: block;
+}
+
+.translator__options {
+    display: none;
+    position: absolute;
+}
+
+.translator__option {
+
+}
+
+.translator__input {
+    resize: none;
+}
+
+.translator__start {
+
+}
