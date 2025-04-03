@@ -21,18 +21,26 @@ body, input, button, textarea {
 .translator-wrapper {
     width: 100vw;
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.85);
 }
 
-translator {
-    margin: auto;
+.translator {
 }
 
 .translator__sides {
     display: flex;
+    margin-bottom: 10px;
 }
 
 .translator__side {
 
+}
+
+.translator__side:first-child {
+    margin-right: 10px;
 }
 
 .translator__options-wrapper {
@@ -40,7 +48,10 @@ translator {
 }
 
 .translator__selected-option {
-
+    cursor: pointer;
+    padding: 10px;
+    background: black;
+    color: white;
 }
 
 .translator__selected-option:hover ~ .translator__options, .translator__options:hover {
@@ -50,16 +61,42 @@ translator {
 .translator__options {
     display: none;
     position: absolute;
+    background: black;
 }
 
 .translator__option {
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    border: 1px solid black;
+}
 
+.translator__option:hover {
+    background: white;
+    color: black;
 }
 
 .translator__input {
     resize: none;
+    outline: none;
+    padding: 10px;
+    height: 150px;
+    width: 300px;
+    border: 1px solid black;
+    background: white;
 }
 
 .translator__start {
+    border: none;
+    background: black;
+    color: white;
+    border: 1px solid black;
+    padding: 10px;
+    width: 80px;
+    cursor: pointer;
+}
 
+.translator__start:hover {
+    background: white;
+    color: black;
 }

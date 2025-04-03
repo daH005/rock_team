@@ -1,9 +1,12 @@
 from flask import Flask
+from flask_cors import CORS
 
 from translator import Translator
 from decorator import text_param_decorator
 
 app = Flask(__name__)
+CORS(app)
+
 translator = Translator('gemma3')
 
 
@@ -34,5 +37,5 @@ def translate_elvish_to_english(text: str) -> str:
 if __name__ == '__main__':
     app.run(
         host='0.0.0.0',
-        port=8080,
+        port=7777,
     )

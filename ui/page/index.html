@@ -45,7 +45,7 @@
 </main>
 
 <script>
-    const API_BASE_URL = "http://localhost:8080/translate/";
+    const API_BASE_URL = "http://localhost:7777/translate/";
     const inputs = document.querySelectorAll(".translator__input");
 
     const selectedOptions = document.querySelectorAll(".translator__selected-option");
@@ -59,10 +59,15 @@
 
     document.querySelector(".translator__start").onclick = async () => {
         let url = API_BASE_URL + selectedOptions[0].textContent.toLowerCase() + "_to_" + selectedOptions[1].textContent.toLowerCase();
-        url += "?text=" + inputs[0].textContent;
+        url += "?text=" + inputs[0].value;
         let response = await fetch(url);
+
+        if (response.status != 200) {
+            return alert("Кажется что-то не то!...");
+        }
+
         let text = await response.text();
-        inputs[1].textContent = text;
+        inputs[1].value = text;
     }
 </script>
 
