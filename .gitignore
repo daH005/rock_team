@@ -7,3 +7,5 @@ lr4/*.csv
 lr7/*.csv
 .env
 .idea
+
+cv/lr4/examples
