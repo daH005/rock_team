@@ -1,0 +1,133 @@
+@font-face {
+    font-family: main;
+    src: url('./tahoma.ttf');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: rgb(25, 25, 25);
+}
+
+body, input, button, textarea {
+    font-family: main;
+}
+
+.logo {
+    color: black;
+    padding: 20px;
+    font-size: 50px;
+}
+
+.heading {
+    margin-left: 100px;
+    color: darkmagenta;
+    font-size: 25px;
+}
+
+.load-box {
+    position: relative;
+    margin: 2% 15%;
+    background: rgba(88, 88, 88, 0.2);
+    border-radius: 20px;
+    font-size: 40px;
+    color: white;
+    cursor: pointer;
+    height: 600px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.load-box:has(video[src]) {
+    background: none;
+}
+
+.load-box video {
+    border-radius: 20px;
+    height: 600px;
+}
+
+.load-box video:not([src]) {
+    display: none;
+}
+
+.load-box:has(video[src]) span {
+    display: none;
+}
+
+.load-box input[type="file"] {
+    display: none;
+}
+
+.result-title {
+    text-align: center;
+    color: darkmagenta;
+    font-size: 30px;
+}
+
+.result:has(.frames:empty) .result-title {
+    display: none;
+}
+
+.frames {
+    text-align: center;
+}
+
+.frame {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.frame__time {
+    color: white;
+    font-size: 30px;
+}
+
+.faces {
+    display: flex;
+    justify-content: center;
+}
+
+.face {
+}
+
+.face img {
+    box-sizing: border-box;
+    display: block;
+    height: 200px;
+    margin-right: 10px;
+}
+
+.face__name {
+    font-size: 20px;
+    color: darkmagenta;
+}
+
+.popup {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.7);
+}
+
+.popup--active {
+    display: flex;
+}
+
+.popup img {
+    width: 200px;
+    animation: spin 2s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}

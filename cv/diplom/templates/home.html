@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Faces</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body style="background: url({{ url_for('static', filename='background.jpg') }})">
+
+<div class="logo">
+    RockTeam Project
+</div>
+
+<div class="heading">
+    Привет! Я программа для автоматического обнаружения лиц.
+    По твоему видео я могу попробовать распознать лица, которые есть в базе данных.
+    Я выведу их тайм-коды.
+</div>
+
+<div id="js-load-box" class="load-box">
+    <video id="js-load-box-video" controls="controls"></video>
+    <input type="file" id="js-load-box-input" accept="video/*">
+    <span>Нажмите для загрузки видео</span>
+</div>
+
+<div class="result">
+    <div class="result-title">Результаты:</div>
+    <div id="js-result" class="frames"></div>
+</div>
+
+<div class="popup" id="js-popup">
+    <img src="{{ url_for('static', filename='loading.png') }}">
+</div>
+
+<template id="js-frame-temp">
+    <div class="frame">
+        <span class="frame__time"></span>
+        <div class="faces"></div>
+    </div>
+</template>
+
+<template id="js-face-temp">
+    <div class="face">
+        <img src="">
+        <span class="face__name"></span>
+    </div>
+</template>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
