@@ -23,7 +23,9 @@
 - 3 сверточных слоя (32 -> 64 -> 128)
 - 128 нейронов
 
-Validation Accuracy: ...
+Validation Accuracy: 0.3
+Epoch 20/20
+12/12 ━━━━━━━━━━━━━━━━━━━━ 9s 744ms/step - accuracy: 1.0000 - loss: 5.8378e-04 - val_accuracy: 0.3056 - val_loss: 6.7305
 Реализация нейросети и подсчёт accuracy в модуле own_models/common_network_train.py
 
 ## 2. Сравнительная сверточная нейросеть
