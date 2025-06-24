@@ -1,0 +1,5 @@
+__pycache__
+*.pkl
+media/result_images/*.jpg
+venv
+.idea
