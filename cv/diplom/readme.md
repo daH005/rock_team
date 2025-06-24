@@ -24,6 +24,7 @@
 - 128 нейронов
 
 Validation Accuracy: ...
+Реализация нейросети и подсчёт accuracy в модуле own_models/common_network_train.py
 
 ## 2. Сравнительная сверточная нейросеть
 Состав:
@@ -33,9 +34,11 @@ Validation Accuracy: ...
 - Определение сходства по Евклидовому расстоянию
 
 Validation Accuracy: ...
+Реализация нейросети и подсчёт accuracy в модуле own_models/siamese_network_train.py
 
 ## 3. Сравнительная модель FaceNet512 из пакета deepface
 Validation Accuracy = 1.0
+Accuracy посчитан вручную. Реализация в модуле _facenet512_calc_accuracy.py
 
 # Определение координат лиц
 Через пакет deepface (под капотом Yolov8)
@@ -45,7 +48,14 @@ Validation Accuracy = 1.0
 - Через API
 
 # Запуск проекта локально
-Воспользуйтесь Dockerfile и стандартными командами Docker
+1. Определите файл .env в корне проекта. Пример содержимого:
+```env
+HOST=0.0.0.0
+PORT=8080
+DEBUG=False
+```
+2. Установите Docker и воспользуйтесь установщиком run_project.sh
+Важно: если вы поменяли порт в переменной `PORT`, то его также нужно изменить в `run_project` (пример - `ваш_порт:8080`)
 
 # Демо проекта (с видео низкого качества программа может делать ошибки)
 [demo.webm](https://github.com/user-attachments/assets/5cf042c8-13b3-4a7a-950a-aa4344f9470e)
